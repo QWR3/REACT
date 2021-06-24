@@ -8,16 +8,17 @@ export default function Users() {
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(response => response.json())
             .then(data => {
-                console.log(data);
-                setUserArr(data);
+                setUserArr(data)
             });
     }, []);
     console.log(userArr)
     return (
         <div>
             <p>Hi from Users</p>
-            {userArr.map(user => <div>{user.name}</div>)}
-            {/*<User users={userArr}/>*/}
+
+            <User user={userArr.map(user => user.name)}/>
+
+
         </div>
     );
 
