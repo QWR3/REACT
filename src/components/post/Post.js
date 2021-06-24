@@ -1,10 +1,10 @@
-export default function Post ({item}) {
-    let [title,body]=item
-    return(
+export default function Post({item}) {
+    let [title, body, userId] = item
+    return (
         <div>
-            <h4>{title}</h4>
+            <h4>userId-{userId} title-{title}</h4>
             <br/>
-            <h5>{body}</h5>
+            <h5>body-{body}</h5>
             <hr/>
         </div>
     );

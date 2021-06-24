@@ -14,7 +14,7 @@ export default function Posts({item: id}) {
     console.log(posts)
     return (
         <div>
-            {posts.map(value => <Post item={[value.title, value.body]}/>)}
+            {posts.map(value => <Post item={[value.title, value.body, value.userId]}/>)}
         </div>
     );
 }
