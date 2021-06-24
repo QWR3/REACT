@@ -1,7 +1,7 @@
-export default function User({user}) {
-    console.log(user)
+export default function User({item}) {
+    let [id,name,email]=item
     return (
-        <div>{user}</div>
+        <div>{id}, {name}, {email}</div>
 
     );
 }

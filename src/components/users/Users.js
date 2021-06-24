@@ -16,7 +16,7 @@ export default function Users() {
         <div>
             <p>Hi from Users</p>
 
-            <User user={userArr.map(user => user.name)}/>
+            {userArr.map(user => <User item={[user.id,user.name, user.email]}/>)}
 
 
         </div>
