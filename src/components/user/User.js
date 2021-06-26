@@ -1,12 +1,13 @@
-import Posts from "../posts/Posts";
-
-export default function User({item}) {
+export default function User({item,fn}) {
     let [id, name, email] = item
     return (
-        <h2>
-            <div>{id}, {name}, {email}</div>
-            <Posts item={id}/>
-        </h2>
+        <div>
+            <p>HI from User {name}</p>
+            <p>My id - {id}</p>
+            <p>My email - {email}</p>
+            <button onClick={()=>{fn({id})}}>My posts (click me)</button>
+            {/*<Posts item={id}/>*/}
+        </div>
 
 
     );

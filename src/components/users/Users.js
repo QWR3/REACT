@@ -1,22 +1,11 @@
+import './Users.css';
 import User from "../user/User";
-import {useEffect, useState} from "react";
 
-export default function Users() {
-    let [userArr, setUserArr] = useState([]);
-    useEffect(() => {
-
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(response => response.json())
-            .then(data => {
-                setUserArr(data)
-            });
-    }, []);
-    console.log(userArr)
+export default function Users({item: users, fn}) {
     return (
-        <div>
+        <div className={'users'}>
             <p>Hi from Users</p>
-
-            {userArr.map(user => <User item={[user.id,user.name, user.email]}/>)}
+            {users && users.map(user => <User key={user.id} item={[user.id, user.name, user.email]} fn={fn}/>)}
 
 
         </div>

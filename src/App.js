@@ -1,15 +1,25 @@
 import './App.css';
-import Menu from "./components/menu/Menu";
 import Users from "./components/users/Users";
+import {getUsers,getPosts} from "./services/API";
+import {useEffect, useState} from "react";
+import Posts from "./components/posts/Posts";
 
 function App() {
-  return (
-      <div>
-        <Menu pages={['page1','page2','page3']}/>
-        <Users/>
-        <Menu pages={['page4','page5','page6']}/>
-      </div>
-  );
-}
+    let [posts, setPosts] = useState([])
 
+    let getPostsFn = ({id}) => {
+        console.log(`getPosts from user ${id}`);
+        getPosts(id).then(value => setPosts(value.data));
+    }
+    let [users, setUsers] = useState([])
+    useEffect(() => {
+        getUsers().then(value => setUsers(value.data))
+    }, [])
+    return (
+        <div className={'father'}>
+            <Users item={users} fn={getPostsFn}/>
+            <Posts items={posts}/>
+        </div>
+    );
+}
 export default App;
