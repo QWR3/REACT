@@ -1,5 +1,7 @@
 .posts{
     width: 100%;
-    background-color: gray;
+    background-color: #212121;
     text-align: center;
+    border-right: thick double #32a1ce;
+
 }

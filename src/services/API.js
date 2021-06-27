@@ -7,6 +7,7 @@ let axiosInstance = axios.create(options)
 
 let getUsers = () => axiosInstance('users')
 let getPosts = (id) => axiosInstance(`posts?userId=${id}`)
+let getComments = (postId) => axiosInstance(`comments?postId=${postId}`)
 
-export {getUsers, getPosts}
+export {getUsers, getPosts, getComments}
 

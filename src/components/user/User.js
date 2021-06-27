@@ -6,7 +6,7 @@ export default function User({item,fn}) {
             <p>My id - {id}</p>
             <p>My email - {email}</p>
             <button onClick={()=>{fn({id})}}>My posts (click me)</button>
-            {/*<Posts item={id}/>*/}
+            <hr/>
         </div>
 
 

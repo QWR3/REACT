@@ -1,6 +1,7 @@
 .users{
     background-color: black;
     color: antiquewhite;
-    width: 500px;
+    width: 300px;
     text-align: center;
+    border-right: thick double #32a1ce;
 }
