@@ -1,0 +1,23 @@
+.location{
+    height: 200px;
+    width: 350px;
+    position: fixed;
+    background-color: #11574a;
+    z-index: 101;
+    right: 420px;
+    top: 500px;
+    border-radius: 20px;
+    text-align: center;
+
+}
+
+.location>*{
+    display: block;
+    color: antiquewhite;
+    margin-top: 5px;
+    font-weight: bolder;
+    font-size: x-large;
+}
+.locationColor{
+    color: #184343;
+}

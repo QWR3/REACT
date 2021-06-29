@@ -1,33 +1,56 @@
 import './App.css';
-import Users from "./components/users/Users";
-import {getUsers, getPosts, getComments} from "./services/API";
 import {useEffect, useState} from "react";
-import Posts from "./components/posts/Posts";
-import Comments from "./components/comments/Comments";
+import {getAllCharacters} from "./services/API";
+import Characters from "./components/characters/Characters";
+import AboutCharacter from "./components/aboutCharacter/AboutCharacter";
+import Buttons from "./components/buttons/Buttons";
+import Episode from "./components/episode/Episode";
+import Location from "./components/location/Location"
 
 function App() {
-    let [posts, setPosts] = useState(null)
+    let [characters, setCharacters] = useState(null)
+    let [aboutCharacter, setAboutCharacter] = useState(null)
+    let [page, setPage] = useState(1)
+    let [episode, setEpisode] = useState(null);
+    let [location, setLocation] = useState(null);
 
-    let getPostsFn = ({id}) => {
-        getPosts(id).then(value => setPosts(value.data));
+    let getLocationFn = (location)=>{
+        setLocation(location)
     }
-    let [comments, setComments] = useState(null)
 
-    let getCommentsFn = (postId) => {
-        console.log(postId)
-        getComments(postId).then(value => setComments(value.data))
+    let getEpisodeFn = (epispde) => {
+        setEpisode(epispde)
     }
-    let [users, setUsers] = useState([])
+
+
     useEffect(() => {
-        getUsers().then(value => setUsers(value.data))
-    }, [])
-    // console.log()
+        getAllCharacters(page).then(value => {
+            setCharacters(value.data.results)
+        })
+    }, [page])
+    let pageNext = () => {
+        setPage(page + 1)
+    }
+    let pagePrevious = () => {
+        setPage(page - 1)
+    }
+    let aboutCharacterFn = (character) => {
+        setAboutCharacter(character)
+    }
+
     return (
         <div className={'father'}>
-            <Users item={users} fn={getPostsFn}/>
-            {posts && <Posts items={posts} fn={getCommentsFn}/>}
-            {comments && <Comments items={comments}/>}
-
+            <div>
+                <Buttons page={page} pagePrevious={pagePrevious} pageNext={pageNext}/>
+                {characters &&
+                <Characters items={characters} aboutCharacter={aboutCharacterFn} getEpisodeFn={getEpisodeFn} getLocationFn={getLocationFn}/>}
+                <Buttons page={page} pagePrevious={pagePrevious} pageNext={pageNext} />
+            </div>
+            <div>
+                {aboutCharacter && <AboutCharacter character={aboutCharacter} getEpisodeFn={getEpisodeFn} getLocationFn={getLocationFn}/>}
+                {episode && <Episode episode={episode}/>}
+                {location && <Location location={location}/>}
+            </div>
         </div>
     );
 }
