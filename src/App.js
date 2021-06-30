@@ -1,81 +1,69 @@
-import './App.css';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from 'react-router-dom'
 import {useEffect, useReducer} from "react";
-import {getAllCharacters} from "./services/API";
-import Characters from "./components/characters/Characters";
-import AboutCharacter from "./components/aboutCharacter/AboutCharacter";
-import Buttons from "./components/buttons/Buttons";
-import Episode from "./components/episode/Episode";
-import Location from "./components/location/Location"
+import {getComments, getPosts, getUsers} from "./services/API";
+import Users from "./components/Users/Users";
+import Posts from "./components/Posts/Posts";
+import Comments from "./components/Comments/Comments";
 
 let reducer = (state, action) => {
     switch (action.type) {
-        case "setCharacters":
-            return {...state, characters: action.payload}
-        case "setAboutCharacter":
-            return {...state, aboutCharacter: action.payload}
-        case "setPage":
-            return {...state, page: action.payload}
-        case "setEpisode":
-            return {...state, episode: action.payload}
-        case "setLocation":
-            return {...state, location: action.payload}
+        case "ADD_USERS":
+            return {...state, users: action.users}
+        case "ADD_POSTS":
+            return {...state, posts: action.posts}
+        case "ADD_COMMENTS":
+            return {...state, comments: action.comments}
     }
 }
-
-function App() {
-    let [state, dispatch] = useReducer(reducer, {
-        characters: null,
-        aboutCharacter: null,
-        page: 1,
-        episode: null,
-        location: null
-    })
-    let {characters, aboutCharacter, page, episode, location} = state;
-
-
-    let getLocationFn = (location) => {
-        dispatch({type: "setLocation", payload: location})
-    }
-
-    let getEpisodeFn = (epispde) => {
-        dispatch({type: "setEpisode", payload: epispde})
-    }
-
-
+export default function App() {
+    let [state, dispatch] = useReducer(reducer, {users: null, posts: null, comments: null})
+    let {users, posts, comments} = state
     useEffect(() => {
-        getAllCharacters(page).then(value => {
-            // console.log(JSON.stringify(value.data.results))
-            dispatch({type: "setCharacters", payload: value.data.results})
-        })
-    }, [page])
-    let pageNext = () => {
-        dispatch({type: "setPage", payload: page + 1})
-    }
-    let pagePrevious = () => {
-        dispatch({type:"setPage",payload:page - 1})
-    }
-    let aboutCharacterFn = (character) => {
-        dispatch({type:"setAboutCharacter",payload:character})
-    }
-
+        getUsers.then(value => dispatch({type: "ADD_USERS", users: value.data}))
+    }, [])
+    useEffect(() => {
+        getPosts.then(value => dispatch({type: "ADD_POSTS", posts: value.data}))
+    }, [])
+    useEffect(() => {
+        getComments.then(value => dispatch({type: "ADD_COMMENTS", comments: value.data}))
+    }, [])
     return (
-        <div className={'father'}>
-            <div>
-                <Buttons page={page} pagePrevious={pagePrevious} pageNext={pageNext}/>
-                {characters &&
-                <Characters items={characters} aboutCharacter={aboutCharacterFn} getEpisodeFn={getEpisodeFn}
-                            getLocationFn={getLocationFn}/>}
-                <Buttons page={page} pagePrevious={pagePrevious} pageNext={pageNext}/>
+        <Router>
+            <div className={"App"}>
+                <div className="main">
+                    <ul>
+                        <li>
+                            <Link to={'/'}>home</Link>
+                        </li>
+                        <li>
+                            <Link to={'/users'}>users</Link>
+                        </li>
+                        <li>
+                            <Link to={'/posts'}>posts</Link>
+                        </li>
+                        <li>
+                            <Link to={'/comments'}>comments</Link>
+                        </li>
+                    </ul>
+
+                </div>
+                <div className="body">
+                    <Switch>
+                        {comments && <Route path={'/comments'} render={() =>
+                            <Comments items={comments}/>
+                        }/>}
+                        {users && <Route path={'/users'}>
+                            {users && <Users items={users}/>}
+                        </Route>}
+                        {posts && <Route path={'/posts'} render={() => <Posts items={posts}/>}/>}
+                    </Switch>
+                </div>
             </div>
-            <div>
-                {aboutCharacter &&
-                <AboutCharacter character={aboutCharacter} getEpisodeFn={getEpisodeFn} getLocationFn={getLocationFn}/>}
-                {episode && <Episode episode={episode}/>}
-                {location && <Location location={location}/>}
-            </div>
-        </div>
+        </Router>
     );
 }
-
-export default App;
-// не забудьте встановити axios
