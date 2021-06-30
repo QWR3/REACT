@@ -1,9 +1,5 @@
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from 'react-router-dom'
+import './App.css'
+import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
 import {useEffect, useReducer} from "react";
 import {getComments, getPosts, getUsers} from "./services/API";
 import Users from "./components/Users/Users";
@@ -54,13 +50,9 @@ export default function App() {
                 </div>
                 <div className="body">
                     <Switch>
-                        {comments && <Route path={'/comments'} render={() =>
-                            <Comments items={comments}/>
-                        }/>}
-                        {users && <Route path={'/users'}>
-                            {users && <Users items={users}/>}
-                        </Route>}
-                        {posts && <Route path={'/posts'} render={() => <Posts items={posts}/>}/>}
+                        {comments && <Route path={'/comments'} render={(props) => <Comments items={comments}/>}/>}
+                        {users && <Route path={'/users'} render={(props) => <Users items={users} url={props.match.url}/>}/>}
+                        {posts && <Route path={'/posts'} render={(props) => <Posts items={posts} url={props.match.url}/>}/>}
                     </Switch>
                 </div>
             </div>
