@@ -1,61 +1,79 @@
-import './App.css'
 import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
-import {useEffect, useReducer} from "react";
-import {getComments, getPosts, getUsers} from "./services/API";
-import Users from "./components/Users/Users";
-import Posts from "./components/Posts/Posts";
-import Comments from "./components/Comments/Comments";
+import './App.css';
+import {useState} from "react";
+import Characters from "./components/characters/Characters";
+import AboutCharacter from "./components/aboutCharacter/AboutCharacter";
+import Buttons from "./components/buttons/Buttons";
+import Episode from "./components/episode/Episode";
+import Location from "./components/location/Location"
 
-let reducer = (state, action) => {
-    switch (action.type) {
-        case "ADD_USERS":
-            return {...state, users: action.users}
-        case "ADD_POSTS":
-            return {...state, posts: action.posts}
-        case "ADD_COMMENTS":
-            return {...state, comments: action.comments}
+
+function App() {
+    let [aboutCharacter, setAboutCharacter] = useState([])
+    let [episode, setEpisode] = useState([])
+    let [location, setLocation] = useState([])
+
+    let getLocationFn = (location) => {
+        setLocation(location);
+        setEpisode(null)
+
     }
-}
-export default function App() {
-    let [state, dispatch] = useReducer(reducer, {users: null, posts: null, comments: null})
-    let {users, posts, comments} = state
-    useEffect(() => {
-        getUsers.then(value => dispatch({type: "ADD_USERS", users: value.data}))
-    }, [])
-    useEffect(() => {
-        getPosts.then(value => dispatch({type: "ADD_POSTS", posts: value.data}))
-    }, [])
-    useEffect(() => {
-        getComments.then(value => dispatch({type: "ADD_COMMENTS", comments: value.data}))
-    }, [])
+
+    let getEpisodeFn = (epispde) => {
+        setEpisode(epispde);
+        setLocation(null)
+
+    }
+    let aboutCharacterFn = (character) => {
+        setAboutCharacter(character)
+    }
+
     return (
         <Router>
-            <div className={"App"}>
-                <div className="main">
-                    <ul>
-                        <li>
-                            <Link to={'/'}>home</Link>
-                        </li>
-                        <li>
-                            <Link to={'/users'}>users</Link>
-                        </li>
-                        <li>
-                            <Link to={'/posts'}>posts</Link>
-                        </li>
-                        <li>
-                            <Link to={'/comments'}>comments</Link>
-                        </li>
-                    </ul>
+            <Switch>
+                <div className={'father'}>
+                    <Route exact path={'/'} render={() => {
+                        setEpisode(null)
+                        setLocation(null)
+                        return (
+                            <div className={'start'}>
+                                <Link to={'/page=1'}>
+                                    <button>start</button>
+                                </Link>
+                            </div>)
 
+                    }}/>
+                    <div>
+                        <Route path={'/page=:page'} render={(props) => {
+                            setEpisode(null)
+                            setLocation(null)
+                            return (<div>
+                                <Buttons
+                                    page={props.match.params.page}/>
+                                <Characters page={props.match.params.page}
+                                            aboutCharacter={aboutCharacterFn}
+                                            getEpisodeFn={getEpisodeFn}
+                                            getLocationFn={getLocationFn}
+                                            url={props.match.url}/>
+                                <Buttons page={props.match.params.page}/>
+                            </div>)
+                        }
+
+                        }/>
+                    </div>
+                    <div>
+                        {aboutCharacter &&
+                        <AboutCharacter character={aboutCharacter} getEpisodeFn={getEpisodeFn}
+                                        getLocationFn={getLocationFn}/>}
+                        {episode && <Episode episode={episode}/>}
+                        {location && <Location location={location}/>}
+                    </div>
                 </div>
-                <div className="body">
-                    <Switch>
-                        {comments && <Route path={'/comments'} render={(props) => <Comments items={comments}/>}/>}
-                        {users && <Route path={'/users'} render={(props) => <Users items={users} url={props.match.url}/>}/>}
-                        {posts && <Route path={'/posts'} render={(props) => <Posts items={posts} url={props.match.url}/>}/>}
-                    </Switch>
-                </div>
-            </div>
+            </Switch>
         </Router>
+
     );
 }
+
+export default App;
+// не забудьте встановити axios, react-router-dom

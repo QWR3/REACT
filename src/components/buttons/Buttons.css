@@ -1,0 +1,39 @@
+.btnFather {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.page {
+    margin: auto;
+    color: antiquewhite;
+}
+
+.buttons {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.buttons button {
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    background-color: #112222;
+    color: antiquewhite;
+    border: 2px solid #4CAF50;
+    transition-duration: 0.4s;
+    margin: 20px;
+    font-weight: bolder;
+
+}
+
+.buttons button:hover {
+    background-color: #4CAF50;
+    color: antiquewhite;
+}

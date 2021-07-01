@@ -1,0 +1,58 @@
+.textAboutCharacter > * {
+    margin: 14px 0;
+    color: antiquewhite;
+}
+.textAboutCharacter{
+    margin-top: -12px;
+}
+.aboutCharacter {
+    position: fixed;
+    z-index: 101;
+    height: 410px;
+    right: 30px;
+    top: 145px;
+    text-align: center;
+    display: flex;
+    background-color: #214559;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.aboutCharacter > div {
+    width: 350px;
+}
+
+.aboutCharacter small {
+    font-size: small;
+}
+
+.image {
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    height: 410px;
+}
+
+.color {
+    color: #00626f;
+}
+
+
+.textAboutCharacter button {
+    margin: 0;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    background-color: #112222;
+    color: antiquewhite;
+    border: 2px solid #4CAF50;
+    transition-duration: 0.4s;
+    font-weight: bolder;
+}
+
+.textAboutCharacter button:hover {
+    background-color: #4CAF50;
+    color: antiquewhite;
+}
