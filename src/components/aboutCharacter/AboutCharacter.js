@@ -3,23 +3,35 @@ import {useEffect, useReducer, useState} from "react";
 import {aboutCharacter, getEpisode, getLocation} from "../../services/API";
 import {Link, Route} from "react-router-dom";
 
+let reducer = (state, action) => {
+    switch (action.type) {
+        case "ADD_EPISODE":
+            return {...state, episode: action.payload}
+        case "ADD_LOCATION":
+            return {...state, location: action.payload}
+        case "ADD_CHARACTER":
+            return {...state, character: action.payload}
+        default:
+            return {...state}
+    }
+
+}
 export default function AboutCharacter({id, getEpisodeFn, getLocationFn, url}) {
-    let [episode, setEpisode] = useState([]);
-    let [location, setLocation] = useState([]);
-    let [character, setCharacter] = useState([])
+    let [state, dispatch] = useReducer(reducer, {episode: [], location: [], character: []})
+    let {episode, location, character} = state
     useEffect(() => {
-        id && aboutCharacter(id).then(value => setCharacter(value.data))
+        id && aboutCharacter(id).then(value => dispatch({type: "ADD_CHARACTER", payload: value.data}))
 
     }, [id])
     let {id: characterId, name, status, species, gender, location: locationUrl, image, episode: episodeUrls} = character
     useEffect(() => {
         locationUrl && getLocation(locationUrl.url).then(value => {
-            setLocation(value.data)
+            dispatch({type: "ADD_LOCATION", payload: value.data})
         })
     }, [locationUrl])
     useEffect(() => {
         episodeUrls && getEpisode(episodeUrls[0]).then(value => {
-            setEpisode(value.data)
+            dispatch({type: "ADD_EPISODE", payload: value.data})
         })
     }, [episodeUrls])
     if (name) {
