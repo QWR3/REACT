@@ -1,0 +1,11 @@
+.pokemon{
+    border: 6px double #32a1ce;
+    border-radius: 4px;
+    margin: 5px;
+    height: 100px;
+    width: 140px;
+    text-align: center;
+}
+.pokemon>h3{
+    margin-top: 5px;
+}

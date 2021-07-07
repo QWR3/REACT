@@ -1,0 +1,6 @@
+.pokemons{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    align-content: space-around;
+}

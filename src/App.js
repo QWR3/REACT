@@ -1,48 +1,35 @@
 import './App.css'
+import Pokemons from "./components/pokemons/Pokemons";
+import Buttons from "./components/buttons/Buttons";
+import ChosenPokemon from "./components/chosenPokemon/ChosenPokemon";
 
-import {useSelector, useDispatch} from "react-redux";
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
+import {useSelector} from "react-redux";
+
 
 export default function App() {
-    const number = useSelector(({number}) => number)
-    const dispatch = useDispatch()
+    const path = '/pokemons/page='
 
-    const dispatchF = (e) => {
-        e.preventDefault()
-        dispatch({type: e.target[0].name, payload: parseInt(e.target[0].value) || 0})
-    }
+    const urlToChosen = useSelector(({urlToChosen}) => urlToChosen)
 
     return (
-        <div className={'father'}>
-            <h1>{number}</h1>
-            <hr/>
+        <Router>
+            <div className={'father'}>
+                <Route exact path={'/'} render={() => <Link to={path + '1'}><h1>START</h1></Link>}/>
 
-            <div className="flex">
+                <Route path={path + ':page'} render={(props) =>
+                    <div>
+                        <Buttons page={props.match.params.page} url={path}/>
 
-                <div className="">
-                    <button onClick={() => dispatch({type: "DEC"})} className={'btn'}>decrement</button>
-                    <hr/>
-                    <form onSubmit={dispatchF}>
-                        <input type="number" name="DEC_CUSTOM"/>
-                        <button className={'btn'}>decrement custom</button>
-                    </form>
-                </div>
+                        <Pokemons match={props.match}/>
 
-                <hr/>
-                <div className="">
-                    <button onClick={() => dispatch({type: "RESET"})} className={'btn'}>reset</button>
-                </div>
-                <hr/>
+                        <Buttons page={props.match.params.page} url={path}/>
+                    </div>
+                }/>
 
-                <div className="">
-                    <button onClick={() => dispatch({type: "INC"})} className={'btn'}>increment</button>
-                    <hr/>
-                    <form onSubmit={dispatchF}>
-                        <input type="number" name="INC_CUSTOM"/>
-                        <button className={'btn'}>increment custom</button>
-                    </form>
-                </div>
-
+                <Route exact path={urlToChosen + '/:name'}
+                       render={(props) => <ChosenPokemon name={props.match.params.name}/>}/>
             </div>
-        </div>
+        </Router>
     );
 }

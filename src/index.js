@@ -7,26 +7,18 @@ import reportWebVitals from './reportWebVitals';
 import {createStore} from "redux";
 import {Provider} from "react-redux";
 
-function reducer(state = {number: 0}, action) {
+const reducer = (state = {pokemons: null, page: 0, urlToChosen: null, chosen:null}, action) => {
     switch (action.type) {
-        case "INC": {
-            return {...state, number: state.number + 1}
-        }
-        case "DEC": {
-            return {...state, number: state.number - 1}
-        }
-        case "INC_CUSTOM": {
-            return {...state, number: state.number + action.payload}
-        }
-        case "DEC_CUSTOM": {
-            return {...state, number: state.number - action.payload}
-        }
-        case "RESET": {
-            return {...state, number: 0}
-        }
-        default: {
-            return {...state}
-        }
+        case "ADD_POKEMONS":
+            return {...state, pokemons: action.payload}
+        case "SET_PAGE":
+            return {...state, page: action.payload}
+        case "SET_URL_TO_CHOSEN":
+            return {...state, urlToChosen: action.payload}
+        case "SET_CHOSEN":
+            return {...state, chosen: action.payload}
+        default:
+            return state
     }
 }
 
