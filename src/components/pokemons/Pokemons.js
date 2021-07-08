@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 
 export default function Pokemons({match}) {
-    const [pokemons, page] = useSelector(({pokemons, page}) => [pokemons, page])
+    const pokemons = useSelector(({pokemons}) => pokemons)
     const dispatch = useDispatch()
 
     const paramsPage = parseInt(match.params.page) - 1
@@ -17,7 +17,7 @@ export default function Pokemons({match}) {
         getPokemons( paramsPage * 50).then(value => {
             dispatch({type: "ADD_POKEMONS", payload: {...value.data}})
         })
-    }, [dispatch, match.url, page, paramsPage])
+    }, [dispatch, match.url, paramsPage])
 
     return (
         <div className={'pokemons'}>

@@ -7,12 +7,10 @@ import reportWebVitals from './reportWebVitals';
 import {createStore} from "redux";
 import {Provider} from "react-redux";
 
-const reducer = (state = {pokemons: null, page: 0, urlToChosen: null, chosen:null}, action) => {
+const reducer = (state = {pokemons: null, urlToChosen: null, chosen: null}, action) => {
     switch (action.type) {
         case "ADD_POKEMONS":
             return {...state, pokemons: action.payload}
-        case "SET_PAGE":
-            return {...state, page: action.payload}
         case "SET_URL_TO_CHOSEN":
             return {...state, urlToChosen: action.payload}
         case "SET_CHOSEN":
