@@ -2,9 +2,14 @@
     display: block;
     width: 100%;
 }
+.chosenPokemon>div>ul{
+    display: block;
+    width: 50%;
+    margin: auto;
+}
 
 .chosenPokemon{
-    height: 200px;
+    height: 400px;
     width: 20%;
     position: fixed;
     top: 105px;
@@ -17,5 +22,11 @@
     align-content: space-evenly;
     justify-content: center;
     box-shadow: 0 0 30px red;
+}
 
+.ul>h3{
+    margin-bottom: 10px;
+}
+.ul li{
+    font-style: italic;
 }

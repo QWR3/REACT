@@ -21,6 +21,19 @@ export default function ChosenPokemon({name}) {
                 <h3>height-{chosen.height} weight-{chosen.weight}</h3>
                 <h3>base experience-{chosen.base_experience}</h3>
                 <h3>last seen in "{chosen.moves[chosen.moves.length - 1].move.name}"</h3>
+
+                <div className="ul">
+                    <h3>abilities:</h3>
+                    <ul>
+                        {chosen.abilities.map(value=><li>{value.ability.name}</li>)}
+                    </ul>
+                </div>
+                <div className="ul">
+                    <h3>stats:</h3>
+                    <ul>
+                        {chosen.stats.map(value=><li>{value.stat.name}</li>)}
+                    </ul>
+                </div>
             </div>}
         </div>
     );
