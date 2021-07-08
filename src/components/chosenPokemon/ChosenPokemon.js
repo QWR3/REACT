@@ -20,7 +20,7 @@ export default function ChosenPokemon({name}) {
                 <h2>{chosen.id}-{chosen.name}</h2>
                 <h3>height-{chosen.height} weight-{chosen.weight}</h3>
                 <h3>base experience-{chosen.base_experience}</h3>
-                <h3>last seen in {chosen.moves[chosen.moves.length - 1].move.name}</h3>
+                <h3>last seen in "{chosen.moves[chosen.moves.length - 1].move.name}"</h3>
             </div>}
         </div>
     );
