@@ -18,3 +18,7 @@
     overflow: hidden;
     max-width: 98%;
 }
+
+.moviesListCardRating{
+    margin: 20px auto;
+}

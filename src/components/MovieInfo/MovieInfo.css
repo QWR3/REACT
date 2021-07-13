@@ -1,0 +1,32 @@
+.movieInfo {
+    margin-top: 100px;
+    background-color: #f5f5f5;
+    height: 100%;
+}
+
+.movieInfoPoster img {
+    width: 29% ;
+    border-radius: 5px;
+    margin: 10px;
+    position: absolute;
+}
+
+.movieInfoText {
+    position: relative;
+    margin-left: 35%;
+}
+
+.movieInfoText>*{
+    margin: 15px;
+}
+.movieInfoText>ul{
+
+}
+.movieInfoText>h1,h3{
+    margin: 10px;
+    text-align: center;
+}
+
+.movieInfoRating{
+    text-align: center;
+}

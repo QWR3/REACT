@@ -22,7 +22,7 @@ export default function MoviesList() {
         })
     }, [page])
 
-    const className = doGenresVisible?"moviesListWhenGenres transition-duration":"moviesList transition-duration"
+    const className = doGenresVisible ? "moviesListWhenGenres transition-duration" : "moviesList transition-duration"
 
     return (
         <div>

@@ -1,45 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6805ae58-5e54-4959-89dd-96d0e11840eb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Genre/Genre.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/GenresList/GenresList.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/GenresList/GenresList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/Header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/Header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MovieInfo/MovieInfo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MoviesList/MoviesList.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MoviesList/MoviesList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MoviesListCard/MoviesListCard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MoviesListCard/MoviesListCard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/Page.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/Page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PosterPreview/PosterPreview.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PosterPreview/PosterPreview.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/StarsRating/StarsRating.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/choosenMovie/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/doGenresVisible/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/isLoading/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/movies/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/page/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+    <list default="true" id="0beb52cd-c004-460c-98b3-419546cd6fe4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/MovieInfo/MovieInfo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/StarsRating/StarRating.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/REACT.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/my-app.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Form/Form.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/listOfTodos/ListOfTodos.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/todo/Todo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/actionCreators/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/actionTypes/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MovieInfo/MovieInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MovieInfo/MovieInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MoviesList/MoviesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesList/MoviesList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MoviesListCard/MoviesListCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesListCard/MoviesListCard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MoviesListCard/MoviesListCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesListCard/MoviesListCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StarsRating/StarsRating.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StarsRating/StarsRating.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/choosenMovie/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/movieInfo/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/counterReducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/todosReducer.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/API.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +30,8 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1vFi86iMtk3vv9Fn4P3btuzRd9y" />
+  <component name="ProjectId" id="1vGHajMFqFy9imed4WoCEC8VdMw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -67,12 +48,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6805ae58-5e54-4959-89dd-96d0e11840eb" name="Default Changelist" comment="" />
-      <created>1626164081060</created>
+      <changelist id="0beb52cd-c004-460c-98b3-419546cd6fe4" name="Default Changelist" comment="" />
+      <created>1626181653640</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1626164081060</updated>
-      <workItem from="1626164088814" duration="2399000" />
+      <updated>1626181653640</updated>
+      <workItem from="1626181722259" duration="3219000" />
     </task>
     <servers />
   </component>
