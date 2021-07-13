@@ -5,7 +5,6 @@ import {getMovieInfo} from "../../services/API";
 import {useDispatch, useSelector} from "react-redux";
 import {setMovieInfo} from "../../redux/movieInfo";
 import PosterPreview from "../PosterPreview/PosterPreview";
-import StarsRating from "../StarsRating/StarsRating";
 import SimpleRating from "../StarsRating/StarsRating";
 
 export default function MovieInfo({id}) {
@@ -25,6 +24,7 @@ export default function MovieInfo({id}) {
             </div>
             <div className={"movieInfoText"}>
                 <h1>{movie.original_title}</h1>
+                <h3>({movie.release_date})</h3>
                 <div className="movieInfoRating">
                     <SimpleRating value={movie.vote_average}/>
                 </div>

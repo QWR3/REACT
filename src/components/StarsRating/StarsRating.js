@@ -9,7 +9,7 @@ export default function SimpleRating({value = 0, size = "large"}) {
     return (
         <div>
             <Box component="fieldset" mb={3} borderColor="transparent">
-                <Rating name="read-only" value={value} precision={0.2} max={10} readOnly className={'rating'}
+                <Rating name="read-only" value={value} precision={0.1} max={10} readOnly className={'rating'}
                         size={size}/>
                 <p>{value}/10</p>
             </Box>

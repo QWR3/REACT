@@ -10,20 +10,22 @@ import GenresList from "../GenresList/GenresList";
 
 export default function MoviesList() {
     const dispatch = useDispatch()
-    const [movies, page, doGenresVisible] = useSelector(({
-                                                             movies,
-                                                             page,
-                                                             doGenresVisible
-                                                         }) => [movies, page.value, doGenresVisible.value])
+    const [movies, page, doGenresVisible, genre] = useSelector(({
+                                                                    movies,
+                                                                    page,
+                                                                    doGenresVisible,
+                                                                    genre
+                                                                }) => [movies, page.value, doGenresVisible.value, genre.value])
 
     useEffect(() => {
-        getMovies(page).then(value => {
+        getMovies(page, genre).then(value => {
             dispatch(setMovies(value.data));
         })
-    }, [page])
+
+    }, [page, genre])
 
     const className = doGenresVisible ? "moviesListWhenGenres transition-duration" : "moviesList transition-duration"
-
+    console.log(genre)
     return (
         <div>
             <div className={className}>

@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0beb52cd-c004-460c-98b3-419546cd6fe4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/MovieInfo/MovieInfo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/StarsRating/StarRating.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/REACT.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="0beb52cd-c004-460c-98b3-419546cd6fe4" name="Default Changelist" comment="ahah, it`s work . &#10;done page, MovieInfo, rating">
+      <change afterPath="$PROJECT_DIR$/src/components/Genre/Ganre.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/genre/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/search/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Genre/Genre.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Genre/Genre.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MovieInfo/MovieInfo.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MovieInfo/MovieInfo.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MovieInfo/MovieInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MovieInfo/MovieInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MoviesList/MoviesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesList/MoviesList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MoviesListCard/MoviesListCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesListCard/MoviesListCard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MoviesListCard/MoviesListCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesListCard/MoviesListCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/StarsRating/StarsRating.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StarsRating/StarsRating.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/choosenMovie/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/movieInfo/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/API.js" afterDir="false" />
     </list>
@@ -31,7 +25,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1vGHajMFqFy9imed4WoCEC8VdMw" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -53,11 +49,34 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1626181653640</updated>
-      <workItem from="1626181722259" duration="3219000" />
+      <workItem from="1626181722259" duration="12221000" />
     </task>
+    <task id="LOCAL-00001" summary="ahah, it`s work . &#10;done page, MovieInfo, rating">
+      <created>1626185337344</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1626185337344</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ahah, it`s work . &#10;done page, MovieInfo, rating" />
+    <option name="LAST_COMMIT_MESSAGE" value="ahah, it`s work . &#10;done page, MovieInfo, rating" />
   </component>
 </project>

@@ -1,0 +1,14 @@
+.genre{
+    width: 80%;
+}
+
+.btnGenre{
+    width: 100%;
+    border-radius: 10px;
+    border: solid cornflowerblue;
+    transition-duration:0.3s;
+    background-color: darkturquoise;
+}
+.btnGenre:hover{
+    background-color:  cornflowerblue;
+}

@@ -5,6 +5,8 @@ import isLoadingReducer from "./isLoading"
 import pageReducer from "./page"
 import doGenresVisibleReducer from "./doGenresVisible"
 import movieInfoReducer from "./movieInfo"
+import genreReducer from "./genre"
+import searchReducer from "./search"
 
 export default configureStore({
     reducer: {
@@ -13,6 +15,8 @@ export default configureStore({
         chosenMovie: {},
         page:pageReducer,
         doGenresVisible:doGenresVisibleReducer,
-        movieInfo:movieInfoReducer
+        movieInfo:movieInfoReducer,
+        genre:genreReducer,
+        search:searchReducer
     }
 })
