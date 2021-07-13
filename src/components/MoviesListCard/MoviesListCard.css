@@ -1,0 +1,20 @@
+.moviesListCard{
+    text-align: center;
+    width: 18%;
+    /*background-color: #c9c0bb;*/
+    background-color: #96ded1;
+    border-radius: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: solid #96ded1;
+}
+.moviesListCard> *{
+    margin: 5px;
+}
+.listCardOverview{
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-width: 98%;
+}

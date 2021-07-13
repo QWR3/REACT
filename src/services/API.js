@@ -1,22 +1,13 @@
 import axios from "axios";
-import {setLoading} from "../redux/actionCreators";
 
-const url = "http://localhost:8888/";
-
-const getTodos = axios.get(url + 'get-todos')
-const postTodos = async (dispatch, title, description) => {
-    dispatch(setLoading(true))
-    try {
-        return await axios.post(url + 'create-todo', {
-            title: title,
-            description: description
-        })
-    } catch (e) {
-        console.log(e)
-    } finally {
-        dispatch(setLoading(false))
-    }
-
+const options = {
+    baseURL: "https://api.themoviedb.org/3/"
 }
+const api_key = "api_key=e6fc40e212e40758068c3bb4114f42ae"
 
-export {getTodos, postTodos}
+const axiosInstance = axios.create(options)
+
+const getMovies =(page)=>axiosInstance(`/discover/movie?${api_key}&page=${page}`)
+const getGenres = ()=>axiosInstance(`genre/movie/list?${api_key}`)
+
+export {getMovies, getGenres}

@@ -1,0 +1,29 @@
+.header{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    justify-content: space-around;
+    border-bottom: solid black;
+    z-index: 100;
+    top: 0;
+    background-color: #dcdcdc;
+}
+.header>img{
+    height: 80px;
+}
+.headerForm{
+    height: 35%;
+    width: 60%;
+    display: flex;
+}
+.headerForm>input{
+    height: 100%;
+    width: 95%;
+}
+.headerForm>button{
+    width: 5%;
+    height: 110%;
+}
+

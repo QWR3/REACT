@@ -1,4 +1,16 @@
-import {createStore} from "redux";
-import {rootReducer} from "./reducers";
+import {configureStore} from "@reduxjs/toolkit";
 
-export const store=createStore(rootReducer)
+import moviesReducer from "./movies"
+import isLoadingReducer from "./isLoading"
+import pageReducer from "./page"
+import doGenresVisibleReducer from "./doGenresVisible"
+
+export default configureStore({
+    reducer: {
+        movies: moviesReducer,
+        isLoading: isLoadingReducer,
+        chosenMovie: {},
+        page:pageReducer,
+        doGenresVisible:doGenresVisibleReducer,
+    }
+})

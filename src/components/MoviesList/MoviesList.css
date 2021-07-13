@@ -1,0 +1,35 @@
+.moviesList {
+    margin-top: 100px;
+    background-color: #f5f5f5;
+    text-align: center;
+    transition-duration: 0.3s;
+}
+
+.moviesListFlex {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+    justify-content: space-evenly;
+}
+
+.btn{
+    background-color: #f5f5f5;
+    border: 2px solid #00ced1;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition-duration: 0.3s;
+}
+
+.btn:hover{
+    background-color: #00ced1;
+}
+.moviesListWhenGenres{
+    margin-top: 100px;
+    background-color: #f5f5f5;
+    text-align: center;
+    margin-right: 20%;
+    transition-duration: 0.3s;
+}
+.transition-duration{
+    transition-duration: 0.3s;
+}
