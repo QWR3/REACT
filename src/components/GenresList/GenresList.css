@@ -1,24 +1,43 @@
-.burger-visible{
-    height: 100%;
+.genreList-visible {
+    height: 91%;
     width: 20%;
     margin-left: 80%;
     top: 100px;
-    background-color: darkturquoise!important;
     position: fixed;
     z-index: 90;
     text-align: center;
     vertical-align: middle;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
 }
-.burger-visible>*{
+
+.genreList-visible > * {
     display: inline-block;
     margin: auto;
 }
-.burger-unvisible{
-    height: 80%;
+
+.genreList-unvisible {
+    height: 91%;
     width: 20%;
     margin-left: 100%;
-    background-color: darkturquoise;
+    top: 100px;
     position: fixed;
+    z-index: 90;
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.genreList-light {
+    background-color: darkturquoise;
+
+}
+
+.genreList-dark {
+    background-color: darkslategray;
 }

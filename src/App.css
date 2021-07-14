@@ -1,8 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    transition-duration: 0.3s;
 }
 
-.app {
-    /*background-color: #f5f5f5;;*/
-}
+

@@ -7,6 +7,7 @@ import doGenresVisibleReducer from "./doGenresVisible"
 import movieInfoReducer from "./movieInfo"
 import genreReducer from "./genre"
 import searchReducer from "./search"
+import themeReducer from "./theme"
 
 export default configureStore({
     reducer: {
@@ -17,6 +18,7 @@ export default configureStore({
         doGenresVisible:doGenresVisibleReducer,
         movieInfo:movieInfoReducer,
         genre:genreReducer,
-        search:searchReducer
+        search:searchReducer,
+        theme:themeReducer
     }
 })

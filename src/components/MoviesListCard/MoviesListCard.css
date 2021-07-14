@@ -8,17 +8,17 @@
     margin-bottom: 5px;
     border: solid #96ded1;
 }
+
+.moviesListCard-dark{
+    background-color: #20665C;
+    border: solid #20665C;
+
+}
 .moviesListCard> *{
     margin: 5px;
-}
-.listCardOverview{
-    display: -webkit-box;
-    -webkit-line-clamp: 6;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    max-width: 98%;
 }
 
 .moviesListCardRating{
     margin: 20px auto;
+    bottom: 0;
 }

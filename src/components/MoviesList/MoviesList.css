@@ -12,24 +12,57 @@
     justify-content: space-evenly;
 }
 
-.btn{
-    background-color: #f5f5f5;
-    border: 2px solid #00ced1;
+.btn {
     padding: 10px 20px;
     border-radius: 5px;
-    transition-duration: 0.3s;
 }
 
-.btn:hover{
+.btn-light {
+    background-color: #f5f5f5;
+    border: 2px solid #00ced1;
+}
+
+.btn-light:hover {
     background-color: #00ced1;
 }
-.moviesListWhenGenres{
+
+.btn-dark {
+    background-color: #1E2021;
+    border: 2px solid #00A5A7;
+    color: whitesmoke;
+}
+
+.btn-dark:hover {
+    background-color: #00A5A7;
+}
+
+.moviesListWhenGenres {
     margin-top: 100px;
     background-color: #f5f5f5;
     text-align: center;
-    margin-right: 20%;
-    transition-duration: 0.3s;
+    padding-right: 20%;
 }
-.transition-duration{
-    transition-duration: 0.3s;
+
+.loading {
+    text-align: center;
+    padding-top: 20%;
+
+}
+
+.loading-dark {
+    padding-bottom: 70%;
+    background-color: #1E2021;
+    color: whitesmoke;
+    height: 100%;
+}
+
+.moviesList-dark {
+    background-color: #1E2021;
+    color: black;
+}
+.body-dark {
+    background-color: #1E2021;
+}
+.IsLoading-true{
+    display: none!important;
 }

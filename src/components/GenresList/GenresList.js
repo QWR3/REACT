@@ -7,9 +7,9 @@ import {useSelector} from "react-redux";
 
 export default function GenresList () {
     const [genres,setGenres]=useState([])
-    const doGenresVisible = useSelector(({doGenresVisible})=>doGenresVisible.value)
+    const [doGenresVisible, theme] = useSelector(({doGenresVisible, theme})=>[doGenresVisible.value, theme.value])
 
-    const className = doGenresVisible?"burger-visible transition-duration":"burger-unvisible transition-duration"
+    const className = doGenresVisible?"genreList-visible":"genreList-unvisible"
 
     useEffect(() => {
         getGenres().then(value => {
@@ -17,8 +17,9 @@ export default function GenresList () {
         })
     },[])
 
+    console.log(theme)
     return(
-        <div className={className}>
+        <div className={className + ` genreList-${theme}`}>
             {genres&&genres.map(value => <Genre key={value.id} item={value}/>)}
         </div>
     );

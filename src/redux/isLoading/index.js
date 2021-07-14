@@ -2,13 +2,13 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const slice = createSlice({
     name: "isLoading",
-    initialState: true,
+    initialState: {value: true},
     reducers: {
         setLoadingTrue: (state) => {
-            state = true
+            state.value = true
         },
         setLoadingFalse: (state) => {
-            state = false
+            state.value = false
         }
     }
 })

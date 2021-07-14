@@ -7,9 +7,10 @@ const options = {
 }
 const axiosInstance = axios.create(options)
 
+
 const getMovies = (page, genre='') => axiosInstance(`/discover/movie?${api_key}&page=${page}&with_genres=${genre}`)
 const getGenres = () => axiosInstance(`genre/movie/list?${api_key}`)
 const getMovieInfo = (movie_id) => axiosInstance(`movie/${movie_id}?${api_key}&language=en-US`)
-const getSearch = (page=1, query='')=>axiosInstance(`search/movie?${api_key}$query=${query}&page=${page}&include_adult=false`)
+const getSearch = (page=1, query='')=>axiosInstance(`search/movie?${api_key}&query=${query}&page=${page}`)
 
 export {getMovies, getGenres, getMovieInfo, getSearch}
