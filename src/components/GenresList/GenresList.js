@@ -17,7 +17,6 @@ export default function GenresList () {
         })
     },[])
 
-    console.log(theme)
     return(
         <div className={className + ` genreList-${theme}`}>
             {genres&&genres.map(value => <Genre key={value.id} item={value}/>)}

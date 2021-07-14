@@ -10,10 +10,13 @@ export default function PosterPreview({path}) {
 
     useEffect(() => {
         dispatch(setLoadingFalse())
-    }, [path])
+    }, [dispatch, path])
+
+    const className=path?'':'posterPreviewWithoutImage'
+
     return (
-        <div className={"posterPreview"}>
-            <img src={baseUrl + path} alt=""/>
+        <div className={"posterPreview "+className}>
+            {path && <img src={baseUrl + path} alt=""/>}
         </div>
     );
 }

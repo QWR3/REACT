@@ -40,17 +40,18 @@
     margin-top: 100px;
     background-color: #f5f5f5;
     text-align: center;
-    padding-right: 20%;
+    padding-right: 15%;
 }
 
 .loading {
     text-align: center;
-    padding-top: 20%;
+    padding-top: 30%;
+    padding-bottom: 40%;
 
 }
 
 .loading-dark {
-    padding-bottom: 70%;
+    padding-bottom: 40%;
     background-color: #1E2021;
     color: whitesmoke;
     height: 100%;
@@ -63,6 +64,7 @@
 .body-dark {
     background-color: #1E2021;
 }
-.IsLoading-true{
+.moviesListIsLoading-true{
     display: none!important;
 }
+
